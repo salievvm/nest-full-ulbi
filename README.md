@@ -70,6 +70,11 @@ nest generate module | service | controller users
 
 ## Делаем Import стороннего модуля вместе с сервисом
 
+### Делается это потому, что в `user.service` нам нужен только сервис `roles.service` чтобы при создании пользователя присвоить ему группу.
+
+
 В файле `users.module.ts` в imports указываем просто `RolesModule`
+
 В файле `roles.module.ts` в exports указываем `RolesService`
+
 Теперь модуль RolesModule будет экспортироваться вместе со своим сервисом
