@@ -36,3 +36,20 @@ https://www.postgresql.org/download/
 ## Автогенерация файлов проекта
 
 nest generate module | service | controller users
+
+## Кладем соединение с БД в env
+Устанавливаем пакет для обращения к конфигам
+
+    npm i @nestjs/config --save
+
+Устанавливаем пакет для объявления переменных в момент запуска команд
+
+    npm i cross-env --save
+
+Прописываем настройки npm start в package.json
+
+## Документирование rest-full-api
+
+Устанавливаем swagger 
+
+    $ npm i @nestjs/swagger swagger-ui-express --save

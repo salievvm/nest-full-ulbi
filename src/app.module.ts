@@ -12,7 +12,7 @@ import { User } from './users/users.model';
         
     ],
     imports: [
-    ConfigModule.forRoot({
+        ConfigModule.forRoot({
             envFilePath: `.${process.env.NODE_ENV}.env`
         }),
         SequelizeModule.forRoot({
