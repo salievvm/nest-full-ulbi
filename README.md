@@ -32,3 +32,7 @@ https://sequelize.org/docs/v6/getting-started/
 https://www.postgresql.org/download/
 
 Также необходимо установить pgAdmin
+
+## Автогенерация файлов проекта
+
+nest generate module | service | controller users
