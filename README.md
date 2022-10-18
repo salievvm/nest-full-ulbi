@@ -53,3 +53,23 @@ nest generate module | service | controller users
 Устанавливаем swagger 
 
     $ npm i @nestjs/swagger swagger-ui-express --save
+
+Прописываем в контроллере `users.controller.ts` нужной модели декораторы:
+
+    @ApiTags('Пользователи') // для самого контроллера
+    @ApiOperation({summary: 'Создание пользователя'}) // Для метода - название
+    @ApiResponse({status: 200, type: User}) // Для метода - получение статуса и интерфейса
+
+Прописываем в модели `users.model.ts` для каждого столбца таблицы:
+    
+    @ApiProperty({example: '1', description: 'Уникальный идентификатор'}) // Пример и описание
+
+Прописываем в dto `create-user.dto.ts` тоже самое:
+    
+    @ApiProperty({example: 'example@mail.com', description: 'Email'})
+
+## Делаем Import стороннего модуля вместе с сервисом
+
+В файле `users.module.ts` в imports указываем просто `RolesModule`
+В файле `roles.module.ts` в exports указываем `RolesService`
+Теперь модуль RolesModule будет экспортироваться вместе со своим сервисом
